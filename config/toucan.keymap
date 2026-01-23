@@ -1,74 +1,143 @@
+/* #include <behaviors.dtsi> */
+/* #include <dt-bindings/zmk/keys.h> */
+/* #include <dt-bindings/zmk/bt.h> */
+/* #include <dt-bindings/zmk/outputs.h> */
+/**/
+/* #define BASE 0 */
+/* #define NAV  1 */
+/* #define SYM  2 */
+/* #define ADJ  3 */
+/**/
+/* / { */
+/*     conditional_layers { */
+/*         compatible = "zmk,conditional-layers"; */
+/*         tri_layer { */
+/*             if-layers = <1 2>; */
+/*             then-layer = <3>; */
+/*         }; */
+/*     }; */
+/**/
+/*     keymap { */
+/*         compatible = "zmk,keymap"; */
+/**/
+/*         base { */
+/*             display-name = "BASE"; */
+/*             bindings = < */
+/*                 &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC */
+/*                 &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT */
+/*                 &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC */
+/*                                 &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT */
+/*             >; */
+/*         }; */
+/**/
+/*         nav { */
+/*             display-name = "NAV"; */
+/*             bindings = < */
+/*                 &kp TAB     &kp N1          &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC */
+/*                 &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans */
+/*                 &kp LSHFT   &studio_unlock  &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans */
+/*                                                 &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT */
+/*             >; */
+/*         }; */
+/**/
+/*         sym { */
+/*             display-name = "SYM"; */
+/*             bindings = < */
+/*                 &kp TAB   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC */
+/*                 &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE */
+/*                 &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE */
+/*                                           &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT */
+/*             >; */
+/*         }; */
+/**/
+/*         adj { */
+/*             display-name = "ADJ"; */
+/*             bindings = < */
+/*                 &mo TAB   &trans &kp F7 &kp F8 &kp F9 &kp F12   &kp C_VOL_DN &kp C_MUTE  &kp C_VOL_UP &trans &trans &kp BSPC */
+/*                 &kp LCTRL &trans &kp F4 &kp F5 &kp F6 &kp F11   &trans       &trans      &trans       &trans &trans &trans */
+/*                 &bt LSHFT &trans &kp F1 &kp F2 &kp F3 &kp F10   &trans       &trans      &trans       &trans &trans &trans */
+/*                                    &kp LGUI &mo NAV &kp SPACE   &kp RET &mo 2 &kp RALT */
+/*             >; */
+/*         }; */
+/*         extra_1 { */
+/*                 status = "reserved"; */
+/*         }; */
+/**/
+/*         extra_2 { */
+/*                 status = "reserved"; */
+/*         }; */
+/**/
+/*         extra_3 { */
+/*                 status = "reserved"; */
+/*         }; */
+/*     }; */
+/* }; */
+
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/*
+ * Key position indices
+ *
+ * First row:    0  1  2  3  4  5    6  7  8  9  10 11
+ * Second row:  12 13 14 15 16 17   18 19 20 21 22 23
+ * Third row:   24 25 26 27 28 29   30 31 32 33 34 35
+ * Bottom row:      36 37 38           39 40 41
+ */
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
 #define BASE 0
-#define NAV  1
-#define SYM  2
-#define ADJ  3
+#define SYMB  1
+#define NUMS  2
+#define SETT  3
 
-/ {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
+  keymap {
+    compatible = "zmk,keymap";
+    default_layer {
+      label = "BASE";
+      bindings = <
+  &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+  &kp ESC   &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SQT  &kp RET
+  &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LALT // Use LALT as it is used as meta, not special char
+  &mo 1  &kp LCMD &kp LSHIFT &kp SPACE &kp RCTRL  &mo 2
+      >;
     };
 
-    keymap {
-        compatible = "zmk,keymap";
-
-        base {
-            display-name = "BASE";
-            bindings = <
-                &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-                &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-                &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                                &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
-            >;
-        };
-
-        nav {
-            display-name = "NAV";
-            bindings = <
-                &kp TAB     &kp N1          &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-                &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-                &kp LSHFT   &studio_unlock  &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                                &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-            >;
-        };
-
-        sym {
-            display-name = "SYM";
-            bindings = <
-                &kp TAB   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-                &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-                &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                                          &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
-            >;
-        };
-
-        adj {
-            display-name = "ADJ";
-            bindings = <
-                &mo TAB   &trans &kp F7 &kp F8 &kp F9 &kp F12   &kp C_VOL_DN &kp C_MUTE  &kp C_VOL_UP &trans &trans &kp BSPC
-                &kp LCTRL &trans &kp F4 &kp F5 &kp F6 &kp F11   &trans       &trans      &trans       &trans &trans &trans
-                &bt LSHFT &trans &kp F1 &kp F2 &kp F3 &kp F10   &trans       &trans      &trans       &trans &trans &trans
-                                   &kp LGUI &mo NAV &kp SPACE   &kp RET &mo 2 &kp RALT
-            >;
-        };
-        extra_1 {
-                status = "reserved";
-        };
-
-        extra_2 {
-                status = "reserved";
-        };
-
-        extra_3 {
-                status = "reserved";
-        };
+    symbols_layer {
+      label = "SYMB";
+      bindings = <
+  &none &kp EXCL  &kp AT   &kp HASH  &kp TILDE &kp PLUS   &kp PRCNT     &kp LBKT &kp RBKT  &kp SEMI         &kp QUESTION &kp BSPC
+  &none &kp CARET &kp DLLR &kp MINUS &kp UNDER &kp EQUAL  &kp ASTRK     &kp LPAR &kp RPAR  &kp COLON        &kp GRAVE    &none
+  &none &none     &none    &kp PIPE  &kp AMPS  &none      &kp LESS_THAN &kp LBRC &kp RBRC  &kp GREATER_THAN &kp BSLH     &none
+  &mo 1  &kp LCMD &kp LSHIFT &kp SPACE &kp RCTRL  &mo 2
+      >;
     };
+
+    numbers_layer {
+      label = "NUMS";
+      bindings = <
+  &none &none &kp N1 &kp N2 &kp N3 &none  &none    &kp N1   &kp N2 &kp N3    &none  &kp BSPC
+  &none &none &kp N4 &kp N5 &kp N6 &none  &kp LEFT &kp DOWN &kp UP &kp RIGHT &none  &none
+  &none &none &kp N7 &kp N8 &kp N9 &kp N0 &none    &none    &none  &none     &none  &none
+  &mo 1  &kp LCMD &kp LSHIFT &kp SPACE &kp RCTRL  &mo 2
+      >;
+    };
+
+    bluetooth_layer {
+      label = "SETT";
+      bindings = <
+  &soft_off  &none &none &none &none &bt BT_SEL 0 &bt BT_SEL 0 &kp C_VOL_UP &kp C_BRI_UP &none &none &soft_off
+  &none      &none &none &none &none &bt BT_SEL 1 &bt BT_SEL 1 &kp C_VOL_DN &kp C_BRI_DN &none &none &none
+  &bt BT_CLR &none &none &none &none &bt BT_SEL 2 &bt BT_SEL 2 &none        &none        &none &none &bt BT_CLR
+  &mo 1 &kp LCMD &kp LSHIFT &kp SPACE &kp RCTRL  &mo 2
+      >;
+    };
+  };
 };
