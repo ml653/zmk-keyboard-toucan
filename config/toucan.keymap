@@ -147,8 +147,8 @@
     };
 
     bluetooth_layer {
-      label = "SETT";
-      display-name = <
+      display-name = "SETT";
+      bindings = <
   &soft_off  &none &none &none &none &bt BT_SEL 0 &bt BT_SEL 0 &kp C_VOL_UP &kp C_BRI_UP &none &none &soft_off
   &none      &none &none &none &none &bt BT_SEL 1 &bt BT_SEL 1 &kp C_VOL_DN &kp C_BRI_DN &none &none &none
   &bt BT_CLR &none &none &none &none &bt BT_SEL 2 &bt BT_SEL 2 &none        &none        &none &none &bt BT_CLR
