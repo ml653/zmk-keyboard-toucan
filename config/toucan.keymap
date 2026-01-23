@@ -98,10 +98,26 @@
 #define NUMS  2
 #define SETT  3
 
+/ {
+  combos {
+    compatible = "zmk,combos";
+    combo_layer3_left {
+      timeout-ms = <100>;
+      key-positions = <36 37>;  // <layer 2> && CMD
+      bindings = <&mo 3>;
+    };
+    combo_layer3_right {
+      timeout-ms = <100>;
+      key-positions = <40 41>;  // <layer 3> && CTRL
+      bindings = <&mo 3>;
+    };
+  };
+
+
   keymap {
     compatible = "zmk,keymap";
     default_layer {
-      label = "BASE";
+      display-name = "BASE";
       bindings = <
   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
   &kp ESC   &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SQT  &kp RET
@@ -111,7 +127,7 @@
     };
 
     symbols_layer {
-      label = "SYMB";
+      display-name = "SYMB";
       bindings = <
   &none &kp EXCL  &kp AT   &kp HASH  &kp TILDE &kp PLUS   &kp PRCNT     &kp LBKT &kp RBKT  &kp SEMI         &kp QUESTION &kp BSPC
   &none &kp CARET &kp DLLR &kp MINUS &kp UNDER &kp EQUAL  &kp ASTRK     &kp LPAR &kp RPAR  &kp COLON        &kp GRAVE    &none
@@ -121,7 +137,7 @@
     };
 
     numbers_layer {
-      label = "NUMS";
+      display-name = "NUMS";
       bindings = <
   &none &none &kp N1 &kp N2 &kp N3 &none  &none    &kp N1   &kp N2 &kp N3    &none  &kp BSPC
   &none &none &kp N4 &kp N5 &kp N6 &none  &kp LEFT &kp DOWN &kp UP &kp RIGHT &none  &none
@@ -132,7 +148,7 @@
 
     bluetooth_layer {
       label = "SETT";
-      bindings = <
+      display-name = <
   &soft_off  &none &none &none &none &bt BT_SEL 0 &bt BT_SEL 0 &kp C_VOL_UP &kp C_BRI_UP &none &none &soft_off
   &none      &none &none &none &none &bt BT_SEL 1 &bt BT_SEL 1 &kp C_VOL_DN &kp C_BRI_DN &none &none &none
   &bt BT_CLR &none &none &none &none &bt BT_SEL 2 &bt BT_SEL 2 &none        &none        &none &none &bt BT_CLR
