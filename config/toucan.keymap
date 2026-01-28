@@ -99,19 +99,19 @@
 #define SETT 3
 
 / {
-  combos {
-    compatible = "zmk,combos";
-    combo_layer3_left {
-      timeout-ms = <100>;
-      key-positions = <36 37>;  // <layer 2> && CMD
-      bindings = <&mo 3>;
-    };
-    combo_layer3_right {
-      timeout-ms = <100>;
-      key-positions = <40 41>;  // <layer 3> && CTRL
-      bindings = <&mo 3>;
-    };
-  };
+  /* combos { */
+  /*   compatible = "zmk,combos"; */
+  /*   combo_layer3_left { */
+  /*     timeout-ms = <100>; */
+  /*     key-positions = <36 37>;  // <layer 2> && CMD */
+  /*     bindings = <&mo 3>; */
+  /*   }; */
+  /*   combo_layer3_right { */
+  /*     timeout-ms = <100>; */
+  /*     key-positions = <40 41>;  // <layer 3> && CTRL */
+  /*     bindings = <&mo 3>; */
+  /*   }; */
+  /* }; */
 
 
   keymap {
