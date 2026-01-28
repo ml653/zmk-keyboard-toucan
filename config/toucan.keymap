@@ -94,9 +94,9 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define BASE 0
-#define SYMB  1
-#define NUMS  2
-#define SETT  3
+#define SYMB 1
+#define NUMS 2
+#define SETT 3
 
 / {
   combos {
