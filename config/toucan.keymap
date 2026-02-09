@@ -49,9 +49,9 @@
     symbols_layer {
       display-name = "SYMB";
       bindings = <
-  &kp EXCL  &kp AT    &kp HASH  &kp TILDE &kp PLUS  &kp CARET &kp PRCNT     &kp LBKT &kp RBKT  &kp SEMI         &kp QUESTION &kp BSPC
-  &kp PIPE  &kp AMPS  &kp EQUAL &kp MINUS &kp UNDER &kp DLLR  &kp ASTRK     &kp LPAR &kp RPAR  &kp COLON        &kp GRAVE    &kp F7
-  &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6    &kp LESS_THAN &kp LBRC &kp RBRC  &kp GREATER_THAN &kp BSLH     &kp F8
+  &kp EXCL  &kp AT  &kp HASH &kp TILDE &kp EQUAL &kp CARET &kp PRCNT     &kp LBKT &kp RBKT  &kp SEMI         &kp QUESTION &kp BSPC
+  &kp F1    &kp F2  &kp PLUS &kp MINUS &kp UNDER &kp DLLR  &kp ASTRK     &kp LPAR &kp RPAR  &kp COLON        &kp GRAVE    &kp F7
+  &kp F3    &kp F4  &kp F5   &kp PIPE  &kp AMPS   &kp F6   &kp LESS_THAN &kp LBRC &kp RBRC  &kp GREATER_THAN &kp BSLH     &kp F8
   &mo 1  &kp LCMD &kp LSHIFT &kp SPACE &kp RCTRL &mo 2
       >;
     };
@@ -82,7 +82,7 @@
   &trans &trans &trans &trans &trans &trans   &mkp LCLK &mkp RCLK &trans &trans &trans &trans
   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
-  &mo 1 &kp LCMD &kp LSHIFT &mkp LCLK &kp RCTRL &mo 2
+  &trans &trans &trans &mkp LCLK &trans &trans
       >;
     };
   };
