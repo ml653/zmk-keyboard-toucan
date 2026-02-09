@@ -49,30 +49,30 @@
     symbols_layer {
       display-name = "SYMB";
       bindings = <
-  &kp EXCL  &kp AT  &kp HASH &kp TILDE &kp EQUAL &kp CARET &kp PRCNT     &kp LBKT &kp RBKT  &kp SEMI         &kp QUESTION &kp BSPC
-  &kp F1    &kp F2  &kp PLUS &kp MINUS &kp UNDER &kp DLLR  &kp ASTRK     &kp LPAR &kp RPAR  &kp COLON        &kp GRAVE    &kp F7
-  &kp F3    &kp F4  &kp F5   &kp PIPE  &kp AMPS   &kp F6   &kp LESS_THAN &kp LBRC &kp RBRC  &kp GREATER_THAN &kp BSLH     &kp F8
-  &mo 1  &kp LCMD &kp LSHIFT &kp SPACE &kp RCTRL &mo 2
+  &kp EXCL &kp AT &kp HASH &kp TILDE &kp EQUAL   &kp CARET &kp PRCNT    &kp LBKT &kp RBKT  &kp SEMI         &kp QUESTION &kp BSPC
+  &kp F1   &kp F2 &kp PLUS &kp MINUS &kp UNDER   &kp DLLR  &kp ASTRK    &kp LPAR &kp RPAR  &kp COLON        &kp GRAVE    &kp F7
+  &kp F3   &kp F4 &kp F5   &kp PIPE  &kp AMPS    &kp F6   &kp LESS_THAN &kp LBRC &kp RBRC  &kp GREATER_THAN &kp BSLH     &kp F8
+  &trans &trans &trans &trans &trans &trans
       >;
     };
 
     numbers_layer {
       display-name = "NUMS";
       bindings = <
-  &kp F9  &kp F10 &kp N1 &kp N2 &kp N3 &kp F11 &kp N0   &kp N1   &kp N2  &kp N3    &kp N4  &kp BSPC
-  &kp F12 &kp F13 &kp N4 &kp N5 &kp N6 &kp F14 &kp LEFT &kp DOWN &kp UP  &kp RIGHT &kp F17 &kp F18
-  &kp F15 &kp F16 &kp N7 &kp N8 &kp N9 &kp N0  &kp F19  &kp F20  &kp F21 &kp F22   &kp F23 &kp F24
-  &mo 1  &kp LCMD &kp LSHIFT &kp SPACE &kp RCTRL &mo 2
+  &kp F9  &kp F10 &kp N1 &kp N2 &kp N3 &kp F11   &kp N0   &kp N1   &kp N2  &kp N3    &kp N4  &kp BSPC
+  &kp F12 &kp F13 &kp N4 &kp N5 &kp N6 &kp F14   &kp LEFT &kp DOWN &kp UP  &kp RIGHT &kp F17 &kp F18
+  &kp F15 &kp F16 &kp N7 &kp N8 &kp N9 &kp N0    &kp F19  &kp F20  &kp F21 &kp F22   &kp F23 &kp F24
+  &trans &trans &trans &trans &trans &trans
       >;
     };
 
     bluetooth_layer {
       display-name = "CONF";
       bindings = <
-  &soft_off  &none &none &none &none &bt BT_SEL 0 &bt BT_SEL 0 &kp C_VOL_UP &kp C_BRI_UP &none &none &soft_off
-  &none      &none &none &none &none &bt BT_SEL 1 &bt BT_SEL 1 &kp C_VOL_DN &kp C_BRI_DN &none &none &none
-  &bt BT_CLR &none &none &none &none &bt BT_SEL 2 &bt BT_SEL 2 &none        &none        &none &none &bt BT_CLR
-  &mo 1 &kp LCMD &kp LSHIFT &kp SPACE &kp RCTRL &mo 2
+  &soft_off  &none &none &none &none &bt BT_SEL 0   &bt BT_SEL 0 &kp C_VOL_UP &kp C_BRI_UP &kp C_PLAY_PAUSE &none &soft_off
+  &none      &none &none &none &none &bt BT_SEL 1   &bt BT_SEL 1 &kp C_VOL_DN &kp C_BRI_DN &none            &none &none
+  &bt BT_CLR &none &none &none &none &bt BT_SEL 2   &bt BT_SEL 2 &none        &none        &none            &none &bt BT_CLR
+  &trans &trans &trans &trans &trans &trans
       >;
     };
 
@@ -80,9 +80,9 @@
       display-name = "TAP";
       bindings = <
   &trans &trans &trans &trans &trans &trans   &mkp LCLK &mkp RCLK &trans &trans &trans &trans
-  &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
-  &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
-  &trans &trans &trans &mkp LCLK &trans &trans
+  &trans &trans &trans &trans &trans &trans   &trans    &trans    &trans &trans &trans &trans
+  &trans &trans &trans &trans &trans &trans   &trans    &trans    &trans &trans &trans &trans
+  &trans &trans &trans &mkp LCLK &trans &to 0
       >;
     };
   };
