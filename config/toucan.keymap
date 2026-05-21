@@ -49,9 +49,9 @@
     symbols_layer {
       display-name = "SYMB";
       bindings = <
-  &kp EXCL &kp AT &kp HASH &kp TILDE &kp EQUAL   &kp CARET &kp PRCNT    &kp LBKT &kp RBKT  &kp SEMI         &kp QUESTION &kp BSPC
-  &kp F1   &kp F2 &kp PLUS &kp MINUS &kp UNDER   &kp DLLR  &kp ASTRK    &kp LPAR &kp RPAR  &kp COLON        &kp GRAVE    &kp F7
-  &kp F3   &kp F4 &kp F5   &kp PIPE  &kp AMPS    &kp F6   &kp LESS_THAN &kp LBRC &kp RBRC  &kp GREATER_THAN &kp BSLH     &kp F8
+  &kp F1   &kp EXCL &kp AT    &kp HASH  &kp EQUAL &kp CARET &kp PRCNT     &kp LBKT &kp RBKT &kp SEMI         &kp QUESTION &kp BSPC
+  &kp F2   &kp F3   &kp PLUS  &kp MINUS &kp UNDER &kp DLLR  &kp ASTRK     &kp LPAR &kp RPAR &kp COLON        &kp GRAVE    &kp F7
+  &kp F4   &kp F5   &kp TILDE &kp PIPE  &kp AMPS  &kp F6    &kp LESS_THAN &kp LBRC &kp RBRC &kp GREATER_THAN &kp BSLH     &kp F8
   &trans &trans &trans &trans &trans &trans
       >;
     };
@@ -79,10 +79,10 @@
     tap_layer {
       display-name = "TAP";
       bindings = <
-  &trans &trans &trans &trans &trans &trans   &mkp RCLK &to 0 &to 0 &to 0 &to 0 &to 0
-  &trans &trans &trans &trans &trans &trans   &to 0     &to 0 &to 0  &to 0 &to 0 &to 0
-  &trans &trans &trans &trans &trans &trans   &to 0     &to 0 &to 0  &to 0 &to 0 &to 0
-  &trans &trans &trans &mkp LCLK &to 0 &to 0
+  &to 0 &to 0 &to 0 &to 0 &to 0 &to 0   &mkp RCLK &to 0 &to 0 &to 0 &to 0 &to 0
+  &to 0 &to 0 &to 0 &to 0 &to 0 &to 0   &to 0     &to 0 &to 0  &to 0 &to 0 &to 0
+  &to 0 &to 0 &to 0 &to 0 &to 0 &to 0   &to 0     &to 0 &to 0  &to 0 &to 0 &to 0
+  &to 0 &to 0 &to 0 &mkp LCLK &to 0 &to 0
       >;
     };
   };
