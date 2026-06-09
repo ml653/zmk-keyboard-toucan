@@ -108,6 +108,18 @@
         status = "disabled";
         device = <&glidepoint_split>;
         input-processors = <&zip_xy_scaler 1 4>;
+        // Slow scroll: active when the SCROLL layer (index 5) is on, which happens
+        // while Shift is held on a fast-scroll layer (see &lm SCROLL LSHFT in the
+        // keymap). Listed BEFORE `scroller` so that when both SCROLL(5) and the
+        // fast-scroll layers (1/2) are active, the first matching override wins
+        // and we get the slower scaler.
+        scroller_slow {
+            layers = <5>;
+            input-processors = <
+                &zip_xy_to_scroll_mapper
+                &zip_scroll_scaler 1 32
+            >;
+        };
         scroller {
             layers = <1 2>;
             input-processors = <
