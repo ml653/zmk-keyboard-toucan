@@ -112,10 +112,14 @@
         // while Shift is held on a fast-scroll layer (see &lm SCROLL LSHFT in the
         // keymap). Listed BEFORE `scroller` so that when both SCROLL(5) and the
         // fast-scroll layers (1/2) are active, the first matching override wins.
-        // NOTE: the scaler divisor must stay <= 16 (per ZMK docs) or it overflows
-        // and produces no scroll events. zip_scroll_scaler already tracks
-        // remainders, so small slow-scroll deltas accumulate instead of rounding
-        // to zero. Slow = 1/16, plain = 1/8 (twice as fast).
+        //
+        // Plain scroll uses zip_scroll_scaler 1 16 (the known-good value that
+        // worked before). The scroll scaler divisor must stay <= 16 per ZMK docs
+        // (the previous slow value of 32 overflowed and produced no scroll events).
+        // To make slow scroll genuinely SLOWER than plain without going past the
+        // /16 scaler limit, the slow node first halves the raw X/Y movement with
+        // zip_xy_scaler 1 2 BEFORE mapping it to scroll, then applies the same
+        // 1/16 scroll scaler. Net effect: slow scroll is ~half of plain.
         scroller_slow {
             layers = <5>;
             input-processors = <
@@ -127,7 +131,7 @@
             layers = <1 2>;
             input-processors = <
                 &zip_xy_to_scroll_mapper
-                &zip_scroll_scaler 1 8
+                &zip_scroll_scaler 1 16
             >;
         };
 
