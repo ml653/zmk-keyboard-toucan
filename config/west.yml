@@ -10,13 +10,15 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: geeksville
       url-base: https://github.com/geeksville
+    - name: kalbasit
+      url-base: https://github.com/kalbasit
   projects:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
     - name: cirque-input-module
-      remote: geeksville
-      revision: main
+      remote: kalbasit
+      revision: c3e1fcfd8f9fba2e1f8f09ed664822870bce61ca
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
