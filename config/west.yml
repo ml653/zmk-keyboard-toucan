@@ -12,13 +12,32 @@ manifest:
       url-base: https://github.com/geeksville
     - name: kalbasit
       url-base: https://github.com/kalbasit
+    - name: ml653
+      url-base: https://github.com/ml653
+    - name: bennypowers
+      url-base: https://github.com/bennypowers
+    - name: halfdane
+      url-base: https://github.com/halfdane
   projects:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
+    # Fork of kalbasit's fork (geeksville:toucan + sysworkq/IRQ stability fixes)
+    # adding BTN_TOUCH reporting in absolute mode, which the touch_processor
+    # (&mo 4 while touching) needs now that the pad runs in absolute mode.
     - name: cirque-input-module
-      remote: kalbasit
-      revision: c3e1fcfd8f9fba2e1f8f09ed664822870bce61ca
+      remote: ml653
+      revision: c45352d02d0a09afa56088bc54a3354269e53f33
+    # Circular scroll (and other touchpad gestures). bennypowers fork =
+    # halfdane main + split build fixes + circular scroll cursor-leak fix.
+    - name: zmk-input-gestures
+      remote: bennypowers
+      revision: d0e8109e07a3b541dac4567487541a3bcd6c6650
+    # Provides zip_absolute_to_relative, required to turn abs coords back
+    # into cursor deltas after the gesture processor has seen them.
+    - name: zmk-input-processors
+      remote: halfdane
+      revision: 7d18ba7af91e485bbd9febda150505fb38ce6d8a
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
